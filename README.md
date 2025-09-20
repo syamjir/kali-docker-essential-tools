@@ -48,6 +48,13 @@ Tools included:
 ## 🧑‍💻 Requirements
 
 - Node.js 18+
+- npm (comes bundled with Node.js)
+
+ #### 📥 Install Node.js (Kali Linux / Debian / Ubuntu)
+```bash
+sudo apt update
+sudo apt install nodejs npm -y
+```
 
 ## 📦 USAGE
 
