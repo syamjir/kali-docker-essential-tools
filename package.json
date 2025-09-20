@@ -1,0 +1,45 @@
+{
+  "name": "kali-docker-essential-tools",
+  "version": "1.0.0",
+  "description": "CLI tool to display and install essential Kali Linux packages in Docker or Debian-based environments",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "bin": {
+    "kalitools": "./dist/index.js"
+  },
+  "keywords": [
+    "kali",
+    "kali-linux",
+    "pentest",
+    "penetration-testing",
+    "cli",
+    "hacking",
+    "docker",
+    "security",
+    "apt",
+    "installer",
+    "linux",
+    "tools",
+    "networking",
+    "ethical-hacking",
+    "cybersecurity",
+    "debian",
+    "package-manager",
+    "automation",
+    "terminal"
+  ],
+  "author": "syamjir",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "cli-table3": "^0.6.5",
+    "commander": "^14.0.1"
+  }
+}
