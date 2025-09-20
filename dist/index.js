@@ -3,10 +3,10 @@ import Table, {} from "cli-table3";
 import { Command } from 'commander';
 import { spawn } from 'child_process';
 const packages = [
-    { name: 'git', description: 'Version control (clone pentest scripts/tools)' },
     { name: 'net-tools', description: 'Includes ifconfig, netstat, route' },
     { name: 'iproute2', description: 'Modern replacement for net-tools (ip command)' },
     { name: 'nmap', description: 'Network scanning & enumeration tool' },
+    { name: 'git', description: 'Version control (clone pentest scripts/tools)' },
     { name: 'dnsutils', description: 'Tools like dig, nslookup' },
     { name: 'tcpdump', description: 'Packet capture tool' },
     { name: 'netcat-openbsd', description: 'nc command (netcat alternative)' },
@@ -42,25 +42,25 @@ function printBoxedMessage(message) {
     console.log(`| ${message} |`);
     console.log(line + '\n');
 }
-async function installPackage(pkgName) {
+function installPackageCore(pkgName) {
     return new Promise((resolve, reject) => {
-        printBoxedMessage(`⬇️ Starting installation: ${pkgName}`);
-        const child = spawn('brew', ['install', pkgName], { stdio: 'inherit' });
-        child.on('error', (err) => {
-            printBoxedMessage(`❌ Error installing ${pkgName}: ${err.message || err}`);
-            reject(err);
-        });
-        child.on('close', (code) => {
-            if (code === 0) {
-                printBoxedMessage(`✅ Successfully installed: ${pkgName} 🎉`);
-                resolve();
-            }
-            else {
-                printBoxedMessage(`❌ Failed to install ${pkgName} (exit code: ${code})`);
-                reject(new Error(`Exit code ${code}`));
-            }
-        });
+        const child = spawn('apt-get', ['install', '-y', pkgName], { stdio: 'inherit' });
+        child.on('error', reject);
+        child.on('close', code => code === 0 ? resolve() : reject(new Error(`Exit code ${code}`)));
     });
+}
+// Wrapper with logging
+async function installPackage(pkgName) {
+    printBoxedMessage(`⬇️ Starting installation: ${pkgName}`);
+    try {
+        await installPackageCore(pkgName);
+        printBoxedMessage(`✅ Successfully installed: ${pkgName} 🎉`);
+    }
+    catch (err) {
+        const error = err;
+        printBoxedMessage(`❌ Failed to install ${pkgName}: ${error.message}`);
+        throw error;
+    }
 }
 async function installPackagesSequential(packages) {
     for (const [index, pkg] of packages.entries()) {
@@ -82,12 +82,12 @@ program
     .description('CLI tool to show packages info and install those packge')
     .version('1.0.0');
 program
-    .command('packages')
+    .command('show')
     .description('Show the list of packages with descriptions')
     .action(() => showPackages(table, packages));
 program
-    .command('packs')
-    .description('Install all essential packges')
+    .command('install')
+    .description('Install essential packages')
     .option('-n,--name <packages...>', 'Specify package names to install (space separated)')
     .action((options) => {
     const packagesToInstall = options.name ?? packageNames;
