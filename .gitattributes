@@ -1,0 +1,9 @@
+# Treat all TypeScript files as TypeScript
+*.ts linguist-language=TypeScript
+
+# If you have a src folder with TS files, specify that too
+src/* linguist-language=TypeScript
+
+# Optionally mark compiled JS files as generated so they don’t count toward language stats
+dist/* linguist-generated=true
+build/* linguist-generated=true
