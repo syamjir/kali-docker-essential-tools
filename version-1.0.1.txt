@@ -1,0 +1,39 @@
+Name: exploitdb  
+Description: CLI tool to search Exploit-DB.  
+Installation: apt install exploitdb
+
+Name: hydra  
+Description: Fast network login cracker supporting many protocols.  
+Installation: sudo apt install hydra -y
+
+Name: openssh-server  
+Description: SSH server to allow secure remote login.  
+Installation: sudo apt install openssh-server -y
+
+Name: iputils-ping  
+Description: Provides the ping command to test network connectivity.  
+Installation: sudo apt install iputils-ping -y
+
+Name: wordlists  
+Description: Installs common cracking wordlists (e.g., rockyou.txt).  
+Installation: apt install wordlists
+
+Name: hash-identifier  
+Description: Identifies hash types (e.g., MD5, SHA1) based on length and format.  
+Installation: apt install hash-identifier
+
+Name: ffuf (Fuzz Faster U Fool)  
+Description: Web fuzzer for directories, subdomains, and parameters.  
+Installation: apt install ffuf
+
+Name: fcrackzip  
+Description: Fast ZIP password cracker using brute-force or wordlists.  
+Installation: apt install fcrackzip
+
+Name: dirbuster  
+Description: Brute-forces hidden web files and directories using wordlists.  
+Installation: apt install dirbuster
+
+Name: metasploit-framework  
+Description: Powerful pentesting framework for exploits, payloads, and scanning.  
+Installation: apt install metasploit-framework
