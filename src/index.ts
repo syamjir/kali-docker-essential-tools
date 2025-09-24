@@ -17,13 +17,22 @@ const packages = [
     { name: 'john', description: 'John the Ripper password cracking tool' },
     { name: 'hydra', description: 'Password cracking (online brute forcing)' },
     { name: 'binutils', description: 'Binary tools like strings, objdump' },
-    { name: 'vim or nano', description: 'Text editors' },
+    { name: 'vim', description: 'Powerful terminal-based text editor' },
     { name: 'python3', description: 'Python interpreter (often needed for scripts)' },
     { name: 'ruby', description: 'Ruby interpreter (some tools require it)' },
     { name: 'openssl', description: 'SSL/TLS toolkit (for crypto, certs, etc.)' },
     { name: 'hashcat', description: 'GPU accelerated password cracking' },
-    { name: 'screen or tmux', description: 'Terminal multiplexers' },
-    { name: 'aircrack-ng', description: 'Wireless network auditing tools' }
+    { name: 'screen', description: 'Terminal multiplexer to manage multiple shell sessions' },
+    { name: 'aircrack-ng', description: 'Wireless network auditing tools' },
+    { name: 'exploitdb', description: 'CLI tool to search Exploit-DB' },
+    { name: 'openssh-server', description: 'SSH server to allow secure remote login' },
+    { name: 'iputils-ping', description: 'Provides the ping command to test network connectivity' },
+    { name: 'wordlists', description: 'Installs common cracking wordlists (e.g., rockyou.txt)' },
+    { name: 'hash-identifier', description: 'Identifies hash types (e.g., MD5, SHA1) based on length and format' },
+    { name: 'ffuf', description: 'Web fuzzer for directories, subdomains, and parameters' },
+    { name: 'fcrackzip', description: 'Fast ZIP password cracker using brute-force or wordlists' },
+    { name: 'dirbuster', description: 'Brute-forces hidden web files and directories using wordlists' },
+    { name: 'metasploit-framework', description: 'Powerful pentesting framework for exploits, payloads, and scanning' }
 
 ];
 
@@ -33,7 +42,7 @@ const program = new Command()
 
 const table = new Table({
     head: ['Package Name', 'Description'],
-    colWidths: [20, 60]
+    colWidths: [23, 70]
 })
 
 function showPackages(table: CliTable3, packages: Package[]): void {
