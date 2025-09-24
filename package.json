@@ -1,6 +1,6 @@
 {
   "name": "kali-docker-essential-tools",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CLI tool to display and install essential Kali Linux packages in Docker or Debian-based environments",
   "main": "index.js",
   "type": "module",
