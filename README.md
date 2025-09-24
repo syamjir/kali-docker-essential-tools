@@ -25,23 +25,43 @@
 
 ## 📚 Package List
 
-Tools included:
+#### Networking Tools
+- **openssh-server**: SSH server to allow secure remote login
+- **iputils-ping**: Provides the ping command to test network connectivity
+- **net-tools**: Legacy networking tools (e.g., `ifconfig`)
+- **iproute2**: Modern networking tools (e.g., `ip` command)
+- **nmap**: Network scanner for discovering hosts and services
+- **tcpdump**: Packet capture tool for network analysis
+- **netcat-openbsd**: Network connections (`nc`) for troubleshooting and data transfer
+- **curl**: Command-line tool for transferring data with URLs
+- **wget**: Non-interactive network downloader
 
-- `net-tools` - Legacy networking tools (`ifconfig`, etc.)
-- `iproute2` - Modern networking (`ip` command)
-- `nmap` - Network scanner
-- `git` - Version control
-- `dnsutils` - DNS lookup tools (`dig`, `nslookup`)
-- `tcpdump` - Packet capture
-- `netcat-openbsd` - Network connections (`nc`)
-- `curl`, `wget` - Downloading tools
-- `john`, `hydra`, `hashcat` - Password cracking
-- `binutils` - Binary inspection tools
-- `vim or nano` - Editors
-- `python3`, `ruby` - Script interpreters
-- `openssl` - SSL/TLS tools
-- `screen or tmux` - Terminal multiplexers
-- `aircrack-ng` - Wireless auditing
+#### Exploit Database Tools
+- **exploitdb**: CLI tool to search Exploit-DB
+
+#### Password Cracking Tools
+- **wordlists**: Installs common cracking wordlists (e.g., `rockyou.txt`)
+- **hash-identifier**: Identifies hash types (e.g., MD5, SHA1) based on length and format
+- **john**: Fast password cracking tool
+- **hydra**: Network logon cracker supporting many protocols
+- **hashcat**: GPU/CPU password cracker for many hash types
+- **fcrackzip**: Fast ZIP password cracker using brute-force or wordlists
+
+#### Web Application Security Tools
+- **ffuf**: Web fuzzer for directories, subdomains, and parameters
+- **dirbuster**: Brute-forces hidden web files and directories using wordlists
+- **metasploit-framework**: Powerful pentesting framework for exploits, payloads, and scanning
+
+#### Other Useful Tools
+- **git**: Version control system for code management
+- **dnsutils**: DNS lookup tools (`dig`, `nslookup`)
+- **binutils**: Binary inspection tools for disassembling and analyzing executables
+- **vim**: Advanced text editor for code and configuration files
+- **python3**: Python 3 interpreter for scripting
+- **ruby**: Ruby interpreter for scripting
+- **openssl**: SSL/TLS tools for encryption and certificate management
+- **screen**: Terminal multiplexer for managing multiple sessions
+- **aircrack-ng**: Wireless auditing tools for cracking WiFi passwords and analyzing networks
 
 ---
 
